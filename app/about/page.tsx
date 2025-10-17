@@ -3,8 +3,7 @@ import { getImageUrl, parseTags } from '@/lib/utils';
 import type { AuthorProfile, SocialLinks } from '@/types';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import MarkdownContent from '@/components/MarkdownContent';
 
 export const runtime = 'edge';
 
@@ -141,9 +140,7 @@ export default async function AboutPage() {
 
             {/* 自己紹介 */}
             {author.bio && (
-              <div className="prose prose-lg max-w-none">
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>{author.bio}</ReactMarkdown>
-              </div>
+              <MarkdownContent content={author.bio} className="prose prose-lg max-w-none" />
             )}
           </div>
         </div>

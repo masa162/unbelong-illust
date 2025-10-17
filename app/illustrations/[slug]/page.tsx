@@ -6,8 +6,7 @@ import { getImageUrl, parseTags, formatDate } from '@/lib/utils';
 import type { Illustration } from '@/types';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import MarkdownContent from '@/components/MarkdownContent';
 
 export const runtime = 'edge';
 
@@ -141,11 +140,10 @@ export default async function IllustrationPage({
 
           {/* コンテンツ（説明文） */}
           {illustration.content && (
-            <div className="mt-8 prose prose-lg max-w-none">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                {illustration.content}
-              </ReactMarkdown>
-            </div>
+            <MarkdownContent
+              content={illustration.content}
+              className="mt-8 prose prose-lg max-w-none"
+            />
           )}
         </div>
 
