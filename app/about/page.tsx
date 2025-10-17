@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { authorApi } from '@/lib/api';
 import { getImageUrl, parseTags } from '@/lib/utils';
 import type { AuthorProfile, SocialLinks } from '@/types';
@@ -150,13 +151,13 @@ export default async function AboutPage() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">作品を見る</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <a
+              <Link
                 href="/"
                 className="block bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 text-center"
               >
                 <h4 className="text-xl font-semibold text-primary-600 mb-2">イラスト</h4>
                 <p className="text-gray-600 text-sm">オリジナルイラスト作品</p>
-              </a>
+              </Link>
               <a
                 href="https://unbelong-comic.pages.dev"
                 target="_blank"
